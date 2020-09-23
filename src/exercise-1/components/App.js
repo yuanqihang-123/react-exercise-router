@@ -4,6 +4,8 @@ import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import Home from './Home.js';
 import My_profile from './My_profile.js';
 import About from './About_us.js';
+import Products from './Products.js';
+import Product from './Product.js';
 
 class App extends Component {
   render() {
@@ -19,10 +21,15 @@ class App extends Component {
           <div className="div_link"><NavLink activeStyle={{
             textDecoration: "underline"
           }} className="nav_link_body" to='/about_us' >About us</NavLink></div>
+          <div className="div_link"><NavLink activeStyle={{
+            textDecoration: "underline"
+          }} className="nav_link_body" to='/products' >Products</NavLink></div>
         </div>
         <Route exact path='/home' component={Home} />
         <Route exact path='/my_profile' component={My_profile} />
         <Route exact path='/about_us' component={About} />
+        <Route exact path='/products' component={Products} />
+        <Route  path='/products/:id' component={Product} />
       </BrowserRouter>
 
 

@@ -1,13 +1,13 @@
-import React,{Fragment} from 'react';
+import React from 'react';
 
 const Home = (props)=>{
     console.log(props)
     return (
-        <Fragment>
+        <fragment>
             <span>this is a beautiful home page</span>
             <br></br>
             <span>and the url is '/'</span>
-        </Fragment>
+        </fragment>
     );
 }
 
