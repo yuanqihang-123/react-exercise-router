@@ -1,13 +1,31 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../styles/App.css';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import Home from './Home.js';
+import My_profile from './My_profile.js';
+import About from './About_us.js';
 
 class App extends Component {
   render() {
     return (
-      <div className="app">
-        <Router />
-      </div>
+      <BrowserRouter>
+        <div className="div_nav">
+          <div className="div_link"><NavLink className="nav_link_body" activeStyle={{
+            textDecoration: "underline"
+          }} to='/home' >Home</NavLink></div>
+          <div className="div_link"><NavLink activeStyle={{
+            textDecoration: "underline"
+          }} className="nav_link_body" to='/my_profile' >My profile</NavLink></div>
+          <div className="div_link"><NavLink activeStyle={{
+            textDecoration: "underline"
+          }} className="nav_link_body" to='/about_us' >About us</NavLink></div>
+        </div>
+        <Route exact path='/home' component={Home} />
+        <Route exact path='/my_profile' component={My_profile} />
+        <Route exact path='/about_us' component={About} />
+      </BrowserRouter>
+
+
     );
   }
 }
